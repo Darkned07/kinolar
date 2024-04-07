@@ -5,7 +5,7 @@ import YouTube from "react-youtube";
 
 function KinoOne() {
   const { kino } = useSelector((store) => store.kino);
-  console.log(kino);
+
   const opts = {
     height: "100%",
     width: "100%",

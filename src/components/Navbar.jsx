@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { them } from "../function/them";
 
 function Navbar() {
-  const data = them();
+  them();
   const nav = [
     { href: "kino", names: "kinolar", id: "1" },
     { href: "serial", names: "seriallar", id: "2" },

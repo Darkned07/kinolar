@@ -4,6 +4,7 @@ const initialState = {
   kinolar: JSON.parse(localStorage.getItem("kinolar")) || [],
   kino: JSON.parse(localStorage.getItem("kino")) || [],
   themes: "",
+  filters: JSON.parse(localStorage.getItem("filters")) || [],
 };
 
 export const kinoSLice = createSlice({
@@ -28,7 +29,17 @@ export const kinoSLice = createSlice({
     themeChange: (state, { payload }) => {
       state.themes = payload;
     },
+    getFiltersKino: (state, { payload }) => {
+      const item = state.kinolar.filter((s) => {
+        return s.janri.includes(payload);
+      });
+      if (item) {
+        state.filters = item;
+        localStorage.setItem("filters", JSON.stringify(item));
+      }
+    },
   },
 });
-export const { getKino, getOne, themeChange } = kinoSLice.actions;
+export const { getKino, getOne, themeChange, getFiltersKino } =
+  kinoSLice.actions;
 export default kinoSLice.reducer;
