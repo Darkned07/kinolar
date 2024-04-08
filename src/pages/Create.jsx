@@ -21,7 +21,7 @@ function Create() {
   const data = new Date().toDateString();
   const handleSubmit = (e) => {
     e.preventDefault();
-    postData("http://localhost:3000/kino", {
+    postData("https://api-u9ii.onrender.com/kino", {
       id: nanoid(),
       name: name.current.value,
       davlati: davlati.current.value,

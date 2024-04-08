@@ -4,7 +4,7 @@ function data() {
   const [docs, setDocs] = useState();
   const ds = async () => {
     useEffect(() => {
-      fetch("http://localhost:3000/kino")
+      fetch("https://api-u9ii.onrender.com/kino")
         .then((data) => data.json())
         .then((d) => {
           setDocs(d);

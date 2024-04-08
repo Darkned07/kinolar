@@ -10,7 +10,7 @@ function KinoList({ kino }) {
   dispatch(getKino(kino));
   const moviDelete = (id, movi) => {
     const deleteData = async () => {
-      const response = await fetch(`http://localhost:3000/kino/${id}`, {
+      const response = await fetch(`https://api-u9ii.onrender.com/kino/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
