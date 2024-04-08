@@ -18,7 +18,7 @@ function Create() {
   const kanal = useRef();
   const ytcodes = useRef();
   const yili = useRef();
-  const data = new Date().toDateString();
+  const data = new Date().toGMTString();
   const handleSubmit = (e) => {
     e.preventDefault();
     postData("https://api-u9ii.onrender.com/kino", {

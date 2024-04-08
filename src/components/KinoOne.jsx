@@ -21,7 +21,7 @@ function KinoOne() {
       <div className="card lg:card-side bg-base-100 shadow-xl mb-[10px]">
         <figure>
           <img
-            className="rounded-[20px]"
+            className="rounded-[20px] "
             src={kino && kino.image}
             alt="Album"
           />
