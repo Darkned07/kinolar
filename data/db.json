@@ -1,22 +1,3 @@
 {
-  "kino": {
-    "kinolar": [
-      {
-        "id": "1",
-        "name": "Qasoskorlar",
-        "davlati": "AQSH",
-        "yili": "2014",
-        "image": "https://daryo.uz/cache/2019/05/Qasosrorlar-680x340-680x340.jpg",
-        "tili": "uzbek tilida",
-        "kinmethod": "kino",
-        "janri": ["jangari", "fantastika"],
-        "davomiyligi": "2 soat 10 minut",
-        "tgsilka": "https://t.me/kino_iz_olami/95",
-        "tgkanali": "https://t.me/kino_iz_olami",
-        "ytcodes": "rdAWDaOmQpM",
-        "time": "Sun Apr 07 2024"
-      }
-    ],
-    "reklama": []
-  }
+  "kino": []
 }

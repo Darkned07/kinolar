@@ -1,16 +1,28 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getKino } from "../redux/kino/kinoSlice";
 
 function KinoList({ kino }) {
   const dispatch = useDispatch();
-  const { kinolar } = kino;
-  dispatch(getKino(kinolar));
+  const { admin } = useSelector((a) => a.auth);
+
+  dispatch(getKino(kino));
+  const moviDelete = (id, movi) => {
+    const deleteData = async () => {
+      const response = await fetch(`http://localhost:3000/kino/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+    };
+    deleteData();
+  };
   return (
     <div className="">
       <ul className="flex  gap-[20px] flex-wrap gap-x-9 gap-y-5 place-content-center ">
-        {kinolar.map((cinema) => {
+        {kino.map((cinema) => {
           return (
             <li
               key={cinema.id}
@@ -28,6 +40,16 @@ function KinoList({ kino }) {
                   </h2>
                 </div>
               </Link>
+              {admin && (
+                <button
+                  onClick={() => {
+                    moviDelete(cinema.id, cinema);
+                  }}
+                  className="btn btn-outline"
+                >
+                  Delete
+                </button>
+              )}
             </li>
           );
         })}

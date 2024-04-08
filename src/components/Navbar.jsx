@@ -13,7 +13,7 @@ function Navbar() {
     <>
       <div className="max-container navbar">
         <div className="navbar-start">
-          <div className="dropdown">
+          {/* <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -52,12 +52,12 @@ function Navbar() {
                 );
               })}
             </ul>
-          </div>
+          </div> */}
           <Link to="/" className="btn btn-ghost text-xl">
             Kino Izlovchi
           </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        {/* <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
               <Link to="/" className="capitalize font-normal text-[18px]">
@@ -77,10 +77,16 @@ function Navbar() {
               );
             })}
           </ul>
-        </div>
-        <div className="navbar-end">
-          <Link to="change-theme" className="btn-sm btn md:btn-md">
-            change theme
+        </div> */}
+        <div className="navbar-end flex flex-row gap-2">
+          <Link
+            to="auth"
+            className="btn btn-sm md:btn-md hidden lg:flex btn-secondary btn-outline"
+          >
+            Admin
+          </Link>
+          <Link to="change-theme" className="btn-sm btn-outline btn md:btn-md">
+            Theme o'zgartirish
           </Link>
         </div>
       </div>

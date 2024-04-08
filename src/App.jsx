@@ -1,12 +1,20 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import RootLayout from "./layouts/RootLayout";
 import Home from "./pages/Home";
 import Film from "./pages/Film";
 import Filter from "./pages/Filter";
 import CinemaOne from "./pages/CinemaOne";
 import ChangeTheme from "./pages/ChangeTheme";
+import Create from "./pages/Create";
+import Auth from "./pages/Auth";
+import { useSelector } from "react-redux";
 
 function App() {
+  const { admin } = useSelector((s) => s.auth);
   const routes = createBrowserRouter([
     {
       path: "/",
@@ -31,6 +39,14 @@ function App() {
         {
           path: "/change-theme",
           element: <ChangeTheme />,
+        },
+        {
+          path: "auth",
+          element: admin ? <Navigate to="/create" /> : <Auth />,
+        },
+        {
+          path: "/create",
+          element: admin ? <Create /> : <Navigate to="/" />,
         },
       ],
     },
