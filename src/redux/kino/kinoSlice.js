@@ -19,7 +19,7 @@ export const kinoSLice = createSlice({
       }
     },
     getOne: (state, { payload }) => {
-      const item = state.kinolar.find((i) => i.id === payload);
+      const item = state.kinolar.filter((i) => i.id === payload);
       if (item) {
         state.kino = item;
       } else {
