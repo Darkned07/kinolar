@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  kinolar: [],
+  kinolar: JSON.parse(localStorage.getItem("kinolar")) || [],
   kino: [],
   themes: "",
   filters: [],
@@ -13,7 +13,7 @@ export const kinoSLice = createSlice({
   reducers: {
     getKino: (state, { payload }) => {
       if (payload) {
-        state.kinolar = payload;
+        localStorage.setItem("kinolar", JSON.stringify(payload));
       } else {
         state.kinolar = payload;
       }
