@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { them } from "../function/them";
+import { data } from "autoprefixer";
 
 function Navbar() {
+  const { docs } = data();
   them();
   const nav = [
     { href: "kino", names: "kinolar", id: "1" },
