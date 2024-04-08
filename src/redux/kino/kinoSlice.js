@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  kinolar: JSON.parse(localStorage.getItem("kinolar")) || [],
-  kino: JSON.parse(localStorage.getItem("kino")) || [],
+  kinolar: [],
+  kino: [],
   themes: "",
-  filters: JSON.parse(localStorage.getItem("filters")) || [],
+  filters: [],
 };
 
 export const kinoSLice = createSlice({
@@ -13,7 +13,7 @@ export const kinoSLice = createSlice({
   reducers: {
     getKino: (state, { payload }) => {
       if (payload) {
-        localStorage.setItem("kinolar", JSON.stringify(payload));
+        state.kinolar = payload;
       } else {
         state.kinolar = payload;
       }
@@ -21,7 +21,7 @@ export const kinoSLice = createSlice({
     getOne: (state, { payload }) => {
       const item = state.kinolar.find((i) => i.id === payload);
       if (item) {
-        localStorage.setItem("kino", JSON.stringify(item));
+        state.kino = item;
       } else {
         state.kino = item;
       }
@@ -35,7 +35,6 @@ export const kinoSLice = createSlice({
       });
       if (item) {
         state.filters = item;
-        localStorage.setItem("filters", JSON.stringify(item));
       }
     },
   },
