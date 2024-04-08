@@ -18,7 +18,7 @@ function Footer() {
           </svg>
           <p className="font-bold">
             ACME Industries Ltd. <br />
-            Providing reliable tech since 1992
+            Providing reliable tech since 2024
           </p>
           <p>Copyright © 2024 - All right reserved</p>
         </aside>
