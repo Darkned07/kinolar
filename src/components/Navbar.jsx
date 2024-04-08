@@ -1,10 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { them } from "../function/them";
-import { data } from "autoprefixer";
+import { data } from "../function/data";
+import { useDispatch } from "react-redux";
+import { getKino } from "../redux/kino/kinoSlice";
 
 function Navbar() {
   const { docs } = data();
+  const dispatch = useDispatch();
+
+  dispatch(getKino(docs));
   them();
   const nav = [
     { href: "kino", names: "kinolar", id: "1" },
